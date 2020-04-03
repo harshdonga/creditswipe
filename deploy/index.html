@@ -1,0 +1,183 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<style>
+    .swipe-animation {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    margin: 60px auto;
+    overflow: hidden;
+    }
+    .credit-card {
+    width: 250px;
+    height: 140px;
+    background: #dadada;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    animation: swipe-card 2s ease-in-out infinite;
+    }
+    .credit-card .scc-tripe {
+    position: absolute;
+    background: #434343;
+    width: 100%;
+    height: 25px;
+    bottom: 30px;
+    }
+    .swiper-top, .swiper-bottom {
+    border-radius: 8px 8px 0 0;
+    position: absolute;
+    background: #434343;
+    }
+    .swiper-top {
+    height: 20px;
+    bottom: 105px;
+    z-index: 0;
+    width: 400px;
+    left: calc(50% - 200px);
+    }
+    .swiper-bottom {
+    height: 100px;
+    bottom: 0;
+    z-index: 3;
+    width: 420px;
+    left: calc(50% - 210px);
+    }
+    .swiper-bottom .light-indicator {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #dadada;
+    animation: reader-light 2s ease-in-out infinite;
+    }
+    @keyframes swipe-card {
+    0% {
+    margin-left: -150px;
+    transform: rotate(25deg);
+    }
+    50% {
+    transform: rotate(0deg);
+    }
+    100% {
+    margin-left: 500px;
+    transform: rotate(-25deg);
+    }
+    }
+    @keyframes reader-light {
+    0% {
+    background: #dadada;
+    }
+    60% {
+    background: #b8fd99;
+    }
+    }
+    h1 {
+    display: table;
+    white-space: nowrap;
+    border-spacing: 25px 0;
+    }
+    h1:before, h1:after {
+    content: "";
+    display: table-cell;
+    width: 50%;
+    background: -webkit-linear-gradient(#aaa, #aaa) repeat-x left center;
+    background: -moz-linear-gradient(#aaa, #aaa) repeat-x left center;
+    background: -ms-linear-gradient(#aaa, #aaa) repeat-x left center;
+    background: linear-gradient(#aaa, #aaa) repeat-x left center;
+    background-size: 1px 1px;
+    }
+
+    /**/
+    body {font-family: sans-serif; padding: 2em; background: #f2f2f2; color: #666}
+    p {text-align: center;}
+
+    *{
+    border: 0;
+    outline: 0;
+    }
+    body {
+    background-color: #000;
+    }
+    .swipe {
+    transition:
+    border .5s ease-in,
+    color .5s ease-in,
+    padding .5s ease-in;
+    font: normal 26px arial;
+    display: block;
+    margin: 50px auto 50px;
+    padding: 20px 50px;
+    text-align: center;
+    width: auto;
+    background-color: transparent;
+    border: 1px solid #0080ff;
+    outline: 0;
+    color: #0080ff;
+    cursor: pointer;
+    }
+    .swiped {
+    transition:
+    border .5s ease-out,
+    color .5s ease-in,
+    padding .5s ease-in;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 20px 100px;
+
+    }
+</style>
+
+
+<h1>Peachy Bank</h1>
+
+<div style="display:none" id="card" class="swipe-animation">
+    <div class="credit-card">
+        <div class="scc-tripe"></div>
+    </div>
+    <div class="swiper-top"></div>
+    <div class="swiper-bottom">
+        <div class="light-indicator"></div>
+    </div>
+</div>
+<div>
+    <h3>
+        This account has been declared bankrupt, please meet the required conditions!
+    </h3>
+    </div>
+<!-- <div class="button-container">
+    <button id="button" id="btnClick" onclick="showswipe()" class="swipe">SWIPE CARD!</button>
+</div>
+ -->
+<!-- <div id="1" style="color: #fff;">
+    <p>
+        Total Forgives Cashed out till date : 9820874669<br><br>
+        Total Forgives left : 1
+    </p>
+</div> -->
+<!-- <div id="2" style="color: #fff; display: none;">
+    <p>
+        Total Forgives Cashed out till date : 9820874670<br><br>
+        Total Forgives left : 0
+    </p>
+</div>
+ -->
+
+<script>
+    function showswipe() {
+    console.log('igotclicked')
+    var U = document.getElementById("1");
+    U.style.display = "none";
+    var V = document.getElementById("2");
+    V.style.display = "block";
+    var T = document.getElementById("card");
+    T.style.display = "block";
+    };
+</script>
+</body>
